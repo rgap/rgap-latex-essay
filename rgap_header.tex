@@ -33,7 +33,7 @@
 \usepackage[%
   backend = biber,
   style=apa,
-  citestyle=authoryear-ibid,    
+  citestyle=authoryear-icomp,    
   sorting=nyt,
   autocite=plain, 
   citereset=none,
@@ -43,11 +43,14 @@
   backref=false,              %zeige in der Bibl Rücklinks 
   isbn=false,
   maxbibnames=3,  
-  minbibnames=3,  
+  minbibnames=1,  
   maxnames=3,
   maxcitenames=1,
   useeditor=true,
-  uniquelist=false
+  uniquelist=false,
+  eprint=false,
+  dashed=false,
+  ibidtracker=false
 ]{biblatex}
 \setlength{\bibhang}{0pt}
 
