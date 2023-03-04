@@ -1,0 +1,147 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{xcolor}
+\everymath{\color{violet}}
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes}
+
+% *** ALIGNMENT PACKAGES ***
+\usepackage[margin=1.2in]{geometry}
+\usepackage{times} % Font type
+% *** SILENCE WARNINGS ***
+\usepackage{silence}
+\WarningsOff[catoptions]
+
+% Fontsize
+% \fontsize{13.5pt}{2cm}\selectfont  
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{layout}
+\usepackage{titling}
+\setlength{\droptitle}{-7.5em}     % Eliminate the default vertical space
+\addtolength{\droptitle}{5pt}   % Only a guess. Use this for adjustment
+% Definitions of handy macros can go here
+\setlength{\parindent}{0pt}
+\usepackage{lmodern}
+\usepackage{anyfontsize} 
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[%
+  backend = biber,
+  style=apa,
+  citestyle=authoryear-ibid,    
+  sorting=nyt,
+  autocite=plain, 
+  citereset=none,
+  url=true,                   %URL drucken, wenn angegeben
+  doi=false,                  %DOI drucken, wenn angegeben
+  hyperref=true,              %Zitationen in klickbare Links
+  backref=false,              %zeige in der Bibl Rücklinks 
+  isbn=false,
+  maxbibnames=3,  
+  minbibnames=3,  
+  maxnames=3,
+  maxcitenames=1,
+  useeditor=true,
+  uniquelist=false
+]{biblatex}
+\setlength{\bibhang}{0pt}
+
+% % for colored citations
+% \makeatletter
+% \renewbibmacro*{cite:plabelyear+extradate}{%
+%   \iffieldundef{labelyear}{}
+%     {\clearfield{labelmonth}% don't want months in citations
+%      \clearfield{labelday}% don't want days in citations
+%      \clearfield{labelendmonth}% don't want months in citations
+%      \clearfield{labelendday}% don't want days in citations
+%      \iffieldsequal{labelyear}{labelendyear}% Don't want no-op year ranges
+%        {\clearfield{labelendyear}}
+%        {}%
+%      \iffieldundef{origyear}
+%        {}
+%        {\printorigdate%
+%         \setunit*{\addslash}}%
+%      \iffieldundef{related}
+%        {}
+%        {\iffieldequalstr{relatedtype}{reprintfrom}
+%          {\entrydata*{\thefield{related}}{\printlabeldateextra}%
+%           \setunit*{\addslash}}
+%          {}}%
+%      \printlabeldateextra}}
+
+% \renewbibmacro*{cite}{%
+%   \iffieldequals{fullhash}{\cbx@lasthash}
+%    {\setunit{\compcitedelim}%
+%     \printtext[bibhyperref]{%
+%       \usebibmacro{cite:plabelyear+extradate}}}%
+%    {\printtext[bibhyperref]{%
+%       \ifnameundef{labelname}
+%        {\usebibmacro{cite:noname}%
+%          \setunit{\printdelim{nameyeardelim}}%
+%          \usebibmacro{cite:plabelyear+extradate}%
+%          \savefield{fullhash}{\cbx@lasthash}}
+%        {\ifnameundef{shortauthor}
+%          {\printnames{labelname}}%
+%          {\cbx@apa@ifnamesaved
+%            {\printnames{shortauthor}}
+%            {\ifnameundef{groupauthor}
+%              {\printnames[labelname]{author}}
+%              {\printnames[labelname]{groupauthor}}%
+%             \addspace\printnames[sabrackets]{shortauthor}}}%
+%          \setunit{\printdelim{nameyeardelim}}%
+%         \usebibmacro{cite:plabelyear+extradate}%
+%         \savefield{fullhash}{\cbx@lasthash}}}}%
+%    \setunit{\multicitedelim}}
+
+% \renewbibmacro*{textcite}{%
+%   \iffieldequals{fullhash}{\cbx@lasthash}
+%     {\setunit{\compcitedelim}%
+%      \printtext[bibhyperref]{%
+%        \usebibmacro{cite:plabelyear+extradate}}}
+%     {%
+%     \ifbool{cbx:parens}
+%       {\bibcloseparen\global\boolfalse{cbx:parens}}
+%       {}%
+%       \setunit{\compcitedelim}%
+%       \ifnameundef{labelname}
+%        {\iffieldundef{shorthand}%
+%          {\printtext[bibhyperref]{%
+%             \usebibmacro{cite:noname}}%
+%           \setunit{\ifbool{cbx:np}%
+%                    {\printdelim{nameyeardelim}}%
+%                    {\global\booltrue{cbx:parens}\addspace\bibopenparen}}%
+%           \printtext[bibhyperref]{%
+%             \usebibmacro{cite:plabelyear+extradate}}}
+%          {\printtext[bibhyperref]{%
+%             \usebibmacro{cite:shorthand}}}}
+%        {\printtext[bibhyperref]{%
+%           \ifnameundef{shortauthor}%
+%            {\printnames{labelname}}
+%            {\cbx@apa@ifnamesaved
+%              {\printnames{shortauthor}}
+%              {\ifnameundef{groupauthor}
+%                {\printnames[labelname]{author}}
+%                {\printnames[labelname]{groupauthor}}}}}%
+%         \setunit{\ifbool{cbx:np}
+%                   {\printdelim{nameyeardelim}}
+%                   {\global\booltrue{cbx:parens}\addspace\bibopenparen}}%
+%         \printtext[bibhyperref]{%
+%           \ifnameundef{shortauthor}
+%            {}
+%            {\cbx@apa@ifnamesaved
+%              {}
+%              {\printnames{shortauthor}\setunit{\printdelim{nameyeardelim}}}}%
+%           \usebibmacro{cite:plabelyear+extradate}}%
+%         \savefield{fullhash}{\cbx@lasthash}}}}
+% \makeatother
+
+\addbibresource{citations.bib} %Imports bibliography file
+
+\definecolor{reddish}{HTML}{B6301C}
+\definecolor{blueish}{HTML}{001473}
+\usepackage[colorlinks=true, citecolor=blueish, linkcolor=reddish]{hyperref}
