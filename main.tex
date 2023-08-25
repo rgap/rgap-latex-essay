@@ -13,24 +13,20 @@
 
 \maketitle
 
-% \section{Introduction}
-
 From statistics to finance to cutting-edge robotic systems, a theorem that comes up frequently is the \textit{Bayes' theorem}, which was originally developed by Thomas Bayes—a British statistician and Presbyterian minister—back in the 18th century \parencite{andersson2022introduction}. The Bayes' theorem is denoted as follows:
-
 \begin{align}
 \operatorname{Posterior} = \frac{\operatorname{Likelihood} \cdot \operatorname{Prior}}{\operatorname{Evidence}}~.
 \end{align}
 
 Thomas Bayes was a British statistician and mathematician who is best known for his work in probability theory. In general, \textit{probability theory} provides mathematical tools for dealing with \enquote{degrees of belief} \parencite{russell2010artificial} about events such as the probability of having a cold. Probability theory is used for modeling reasoning and decision-making under uncertainty according to what is known as a probability model, which leads to a predictive model when the purpose of the model is to make predictions about certain events. For example, a simplistic medical diagnosis problem may consist of determining the cause of a headache. A predictive model can determine the cause of a headache by defining a set of possible causes $\operatorname{Headache} \Rightarrow \operatorname{Cold} \lor \operatorname{BadPosture} \lor \operatorname{Alcohol}$; however, we cannot be completely sure of what a patient has! We can only provide a degree of belief about each cause by defining random variables: a symptom variable $X$ with possible values $\{x_1=\operatorname{Headache}, x_2=\operatorname{NotHeadache}\}$ and a cause variable $Y$ with possible values $\{y_1=\operatorname{Cold}, y_2=\operatorname{BadPosture}, y_3=\operatorname{Alcohol}\}$. Probability theory allows us to define a \textit{posterior probability} for having a cold given that we have a headache denoted as $p(\operatorname{Cold} \mid \operatorname{Headache})$. Such a probability can be found by applying the Bayes' theorem
-
- % p(Y\mid X) = \frac{p(X\mid Y)p(Y)}{p(X)}
-
 \begin{align}
 p(Y=\operatorname{Cold} \mid X=\operatorname{Headache}) = \frac{p(X=\operatorname{Headache} \mid Y=\operatorname{Cold}) p(Y=\operatorname{Cold})}{p(X=\operatorname{Headache})}~.
 \end{align}
 
-Assuming a data set is collected from several patients: Patients with a cold that got a headache $p(\operatorname{Headache} \mid \operatorname{Cold})$, and patients with a cold $p(\operatorname{Cold})$, the posterior probability can be computed. To generalize, the most probable cause can also be calculated by applying the formulation:
+ % p(Y\mid X) = \frac{p(X\mid Y)p(Y)}{p(X)}
 
+
+Assuming a data set is collected from several patients: Patients with a cold that got a headache $p(\operatorname{Headache} \mid \operatorname{Cold})$, and patients with a cold $p(\operatorname{Cold})$, the posterior probability can be computed. To generalize, the most probable cause can also be calculated by applying the formulation:
 \begin{align}
 y^* = \argmax_{y} p(Y=y)\prod_{i=1}^n p(X=x_i\mid Y=y)~.
 \end{align}
@@ -64,10 +60,7 @@ To summarize, the Bayes theorem is widely used when dealing with uncertainty due
 
 % From a Bayesian approach, the probability distribution $p(\mathbf y| \mathbf x)$ is the quantity of interest called the \textit{posterior}, and it can be estimated through the application of the Bayes' rule, considering the variable dependency
 
-
 % This is due to the applicability of such a mathematical formulation
-
-
 
 \printbibliography
 
