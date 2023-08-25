@@ -1,7 +1,6 @@
-% \textcite
 \input{rgap_header.tex}
 
-\DeclareMathOperator*{\argmax}{argmax} % thin space, limits underneath in displays
+\DeclareMathOperator*{\argmax}{argmax}
 
 \title{The Bayes' Theorem}
 
@@ -23,9 +22,6 @@ Thomas Bayes was a British statistician and mathematician who is best known for 
 p(Y=\operatorname{Cold} \mid X=\operatorname{Headache}) = \frac{p(X=\operatorname{Headache} \mid Y=\operatorname{Cold}) p(Y=\operatorname{Cold})}{p(X=\operatorname{Headache})}~.
 \end{align}
 
- % p(Y\mid X) = \frac{p(X\mid Y)p(Y)}{p(X)}
-
-
 Assuming a data set is collected from several patients: Patients with a cold that got a headache $p(\operatorname{Headache} \mid \operatorname{Cold})$, and patients with a cold $p(\operatorname{Cold})$, the posterior probability can be computed. To generalize, the most probable cause can also be calculated by applying the formulation:
 \begin{align}
 y^* = \argmax_{y} p(Y=y)\prod_{i=1}^n p(X=x_i\mid Y=y)~.
@@ -46,23 +42,6 @@ The main advantages of Bayesian machine learning come up when measuring uncertai
 
 To summarize, the Bayes theorem is widely used when dealing with uncertainty due to its ability to optimize functions with the use of random variables and probability theory. Its use in complex fields makes Bayesian methods undeniably useful.
 
-% collected for computing the probabilities.
-
-% Given collected data, for example, 
-
-% Inferring 
-
-% Calculating such a probability happens to be possible only by doing what 
-
-% the learning process consists of building a probability $p(y| x)$ that describes a conditional probability distribution of $y$ given the input $x$, and such probability $p(y| x)$ can be learned either discriminatively or generatively.
-
-% generative predictive model. 
-
-% From a Bayesian approach, the probability distribution $p(\mathbf y| \mathbf x)$ is the quantity of interest called the \textit{posterior}, and it can be estimated through the application of the Bayes' rule, considering the variable dependency
-
-% This is due to the applicability of such a mathematical formulation
-
 \printbibliography
-
 
 \end{document}
